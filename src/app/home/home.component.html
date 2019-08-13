@@ -2,4 +2,6 @@
 <div>{{ simpleService.message }}</div>
 <app-widget-one [message]="simpleService.message"></app-widget-one>
 <app-widget-one [message]="'Hello From Plain String'"></app-widget-one>
-<app-widget-two></app-widget-two>
+<app-widget-two>
+  <app-widget-one [message]="simpleService.message"></app-widget-one>
+</app-widget-two>
