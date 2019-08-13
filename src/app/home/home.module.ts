@@ -3,7 +3,7 @@ import { HomeComponent } from "./home.component";
 import { WidgetsModule } from "../widgets/widgets.module";
 
 @NgModule({
-  imports: [WidgetsModule],
+  imports: [WidgetsModule], // WidgetsModule is shared components
   declarations: [HomeComponent],
   exports: [HomeComponent]
 })
