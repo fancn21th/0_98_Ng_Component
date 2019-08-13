@@ -1,0 +1,9 @@
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: red;
+}
+
+:host {
+  border: 1px dashed black;
+  display: block;
+}
