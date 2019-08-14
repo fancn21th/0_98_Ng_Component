@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Renderer } from "@angular/core";
+import { Component, OnInit, ViewChild, Renderer, Input } from "@angular/core";
 
 @Component({
   selector: "app-widget-three",
@@ -8,6 +8,8 @@ import { Component, OnInit, ViewChild, Renderer } from "@angular/core";
 export class WidgetThreeComponent implements OnInit {
   // TODO: figure out second argument means
   @ViewChild("input", { static: false }) input;
+
+  @Input() message = "default value";
 
   constructor(private renderer: Renderer) {}
 

@@ -25,6 +25,13 @@ export class WidgetFourComponent implements OnInit {
     this.container.createComponent(factory);
     this.container.createComponent(factory);
     this.container.createComponent(factory);
-    this.container.createComponent(factory);
+    const widgetRef = this.container.createComponent(factory, 2);
+    widgetRef.instance.message = "I'm the third one ";
+  }
+
+  onClick() {
+    const factory = this.resolver.resolveComponentFactory(WidgetThreeComponent);
+    const widgetRef = this.container.createComponent(factory, 2);
+    widgetRef.instance.message = "I'm the third one ";
   }
 }
