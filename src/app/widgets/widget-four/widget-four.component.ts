@@ -13,7 +13,7 @@ import { WidgetThreeComponent } from "../widget-three/widget-three.component";
   styleUrls: ["./widget-four.component.css"]
 })
 export class WidgetFourComponent implements OnInit {
-  @ViewChild("container", { read: ViewContainerRef }) container;
+  @ViewChild("container", { read: ViewContainerRef, static: false }) container;
 
   constructor(private resolver: ComponentFactoryResolver) {}
 
@@ -22,6 +22,9 @@ export class WidgetFourComponent implements OnInit {
   ngAfterViewInit() {
     console.log(this.container);
     const factory = this.resolver.resolveComponentFactory(WidgetThreeComponent);
+    this.container.createComponent(factory);
+    this.container.createComponent(factory);
+    this.container.createComponent(factory);
     this.container.createComponent(factory);
   }
 }

@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild, Renderer } from "@angular/core";
 })
 export class WidgetThreeComponent implements OnInit {
   // TODO: figure out second argument means
-  @ViewChild("input") input;
+  @ViewChild("input", { static: false }) input;
 
   constructor(private renderer: Renderer) {}
 
