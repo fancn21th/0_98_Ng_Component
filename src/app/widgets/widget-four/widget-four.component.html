@@ -1,2 +1,5 @@
-<button (click)="onClick()">Add Component</button>
+<button (click)="onClick()">Add/Move/Delete Component</button>
 <div #container></div>
+<ng-template #template let-description="description">
+  <h2>My Template: {{ description }}</h2>
+</ng-template>

@@ -14,8 +14,11 @@ import { WidgetThreeComponent } from "../widget-three/widget-three.component";
 })
 export class WidgetFourComponent implements OnInit {
   @ViewChild("container", { read: ViewContainerRef, static: false }) container;
+  @ViewChild("template", { static: false }) template;
 
   constructor(private resolver: ComponentFactoryResolver) {}
+
+  widgetRef: any;
 
   ngOnInit() {}
 
@@ -25,13 +28,24 @@ export class WidgetFourComponent implements OnInit {
     this.container.createComponent(factory);
     this.container.createComponent(factory);
     this.container.createComponent(factory);
-    const widgetRef = this.container.createComponent(factory, 2);
-    widgetRef.instance.message = "I'm the third one ";
+    // const widgetRef = this.container.createComponent(factory, 2);
+    // widgetRef.instance.message = "I'm the third one ";
+
+    this.widgetRef = this.container.createComponent(factory, 2);
+    this.widgetRef.instance.message = "I'm the third one ";
   }
 
+  // onClick() {
+  //   const factory = this.resolver.resolveComponentFactory(WidgetThreeComponent);
+  //   const widgetRef = this.container.createComponent(factory, 2);
+  //   widgetRef.instance.message = "I'm the third one ";
+  // }
+
   onClick() {
-    const factory = this.resolver.resolveComponentFactory(WidgetThreeComponent);
-    const widgetRef = this.container.createComponent(factory, 2);
-    widgetRef.instance.message = "I'm the third one ";
+    const randomIndex = Math.floor(Math.random() * this.container.length);
+    this.container.move(this.widgetRef.hostView, randomIndex);
+    this.container.createEmbeddedView(this.template, {
+      description: "args to template"
+    });
   }
 }
