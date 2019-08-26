@@ -1,14 +1,19 @@
 <p>home works!</p>
 <div>{{ simpleService.message }}</div>
 <app-widget-one [message]="simpleService.message"></app-widget-one>
+<hr />
 <app-widget-one [message]="'Hello From Plain String'"></app-widget-one>
+<hr />
 <app-widget-two>
   <app-widget-one content [message]="simpleService.message"></app-widget-one>
 </app-widget-two>
+<hr />
 <app-widget-two>
   <h2 header>Title</h2>
   <div content>Some content</div>
   <h3 footer>Footer</h3>
 </app-widget-two>
+<hr />
 <app-widget-three> </app-widget-three>
+<hr />
 <app-widget-four> </app-widget-four>
