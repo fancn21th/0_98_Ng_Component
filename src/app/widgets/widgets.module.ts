@@ -11,7 +11,7 @@ import { WidgetFourComponent } from "./widget-four/widget-four.component";
     WidgetThreeComponent,
     WidgetFourComponent
   ],
-  imports: [CommonModule],
+  imports: [CommonModule], // CommonModule is required to use *ng
   exports: [
     WidgetOneComponent,
     WidgetTwoComponent,
